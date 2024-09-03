@@ -1,0 +1,84 @@
+1. git으로 관리할 경로까지 이동
+git은 폴더 만들 때 상하관계 만들면 안됨 - 수직관계는 충돌
+git으로 관리하는 폴더는 하나만
+
+pwd - 경로확인
+cd - ~(물결무늬) 홈디렉토리 , 다시 pwd 홈디렉토리 경로
+cd 하고 파일명 약간 적은 다음에 tab하면 자동완성
+경로명 - 공백없이 영어,/만 사용
+
+2. 초기화(.git 폴더 생성됨 - 숨겨져 있음.)
+git init
+-> .git 폴더 삭제(rm -rf .git)
+.git 폴더만 날리면 코드는 남아있고 .git폴더만 날아감
+
+3. 브랜치 이름 기본값 변경하기(master일때)
+git config --global init.defaultBranch main
+
+4. git 상태확인 
+git status
+
+5. git으로 관리하는 파일로 추가
+git add .
+
+6. commit(해당 시점을 저장)
+git commit -m "커밋 메시지"
+
+7. commit 이전에 계정정보 등록(--global 옵션은 해당 컴퓨터 전체에 적용)
+git config --global user.name"Your Name"
+git config --global user.email you@example.com
+
+git config list
+
+8. commit 정보 확인
+git log
+commit b577c619f0e1f135d17cf2f40a8bd1d77b5d2f7c 16진수 코드값 이전으로 돌릴때 사용 7자리정도 적으면 됨
+
+만약에 옛날 정보가 들어오면
+윈도우 자격증명관리자 검색
+윈도우 자격증명
+git정보 제거
+
+깃 명령어 문제 생기면 .git 폴더 날리면 됨
+
+< rm -rf .git (문제 발생시)
+.git 날림
+
+ls -al로 확인>
+
+
+9. 과제
+project5/test1를 생성
+git으로 관리 (init으로), (global빼고 하기) (코드 만들고 add, commit 반복)
+파일 생성은 알아서...최소 커밋의 수는 5번이상 되도록 하세요
+
+working tree clean : 다 저장되었습니다
+
+소스 바꾸고 add commit 반복
+코드작성 add하고 commit하고
+main은 항상 놔두고 main에서 branch를 빼고 수정한 후 main에 merge
+main은 직접 손대지 않는다, branch를 빼서 수정
+
+git 연동
+public 밑에 있는 건 건드리지 말것
+
+---------------------------------------------------------
+---------------------------------------------------------
+로컬 컴퓨터(코드있음)와 github 사이트(비어있음) 연결
+1. remote 정보 확인
+git remote
+git remote -v
+
+remote 등록은 처음에 한번만
+-u옵션은 처음 한번만
+
+2. remote 추가
+git remote add 리모트 이름 github리파지토리주소
+git remote add origin https://github.com/hymong/project5_work1.git
+
+3. remote 삭제
+git remote rm 리모트이름
+git remote rm origin 
+
+4. github 데이터 넣기
+git push
